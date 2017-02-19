@@ -6,22 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var student_1 = require("./student");
 var AppComponent = (function () {
     function AppComponent() {
-        this.students = [
-            new student_1.Student("Tim", "Hof"),
-            new student_1.Student("Tom", "Hof"),
-            new student_1.Student("Toni", "Hof"),
-            new student_1.Student("Tamara", "Hof")
-        ];
+        this.inputValue = "";
     }
+    AppComponent.prototype.onInputChange = function (inputValue) {
+        this.inputValue = inputValue;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <ul>\n                        <li *ngFor=\"let student of students\">\n                            {{student.firstname }} {{student.lastname}}\n                        </li>\n                    </ul>\n                </div>\n            "
+        template: "\n                <div>\n                   <input type=\"text\" (keyup)=\"onInputChange($event.target.value)\" />\n                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> \n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -5,19 +5,18 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                    <ul>
-                        <li *ngFor="let student of students">
-                            {{student.firstname }} {{student.lastname}}
-                        </li>
-                    </ul>
+                   <input type="text" (keyup)="onInputChange($event.target.value)" />
+                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> 
                 </div>
             `
 })
 export class AppComponent {
-    students = [
-        new Student("Tim", "Hof"),
-        new Student("Tom", "Hof"),
-        new Student("Toni", "Hof"),
-        new Student("Tamara", "Hof")
-    ];
+
+    inputValue = "";    
+
+    onInputChange(inputValue: string){
+
+        this.inputValue = inputValue;
+    }
+
 }
