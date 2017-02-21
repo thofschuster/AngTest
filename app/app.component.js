@@ -8,17 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.inputValue = "";
     }
-    AppComponent.prototype.onInputChange = function (inputValue) {
-        this.inputValue = inputValue;
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                   <input type=\"text\" (keyup)=\"onInputChange($event.target.value)\" />\n                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> \n                </div>\n            "
+        template: "\n                <div>\n                    AppComponent...\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

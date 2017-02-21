@@ -5,18 +5,11 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                   <input type="text" (keyup)="onInputChange($event.target.value)" />
-                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> 
+                    AppComponent...
                 </div>
             `
 })
 export class AppComponent {
 
-    inputValue = "";    
-
-    onInputChange(inputValue: string){
-
-        this.inputValue = inputValue;
-    }
 
 }
