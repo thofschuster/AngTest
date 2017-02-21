@@ -4,19 +4,24 @@ import { Student } from './student';
 @Component({
     selector: 'my-app',
     template: `
-                <div>
-                   <input type="text" (keyup)="onInputChange($event.target.value)" />
-                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> 
+                <div *ngFor="let card of cards">
+                  <my-card title="{{card.title}}" [date]="card.date"></my-card>
+
+
                 </div>
             `
 })
 export class AppComponent {
 
-    inputValue = "";    
-
-    onInputChange(inputValue: string){
-
-        this.inputValue = inputValue;
-    }
+    cards = [
+        {
+            title: "Angular du stück",
+            date: new Date(2020,1,1)
+        },
+        {
+            title: "Ich bin alt!",
+            date: new Date(2010,1,1)
+        }
+    ];
 
 }

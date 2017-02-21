@@ -8,17 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.inputValue = "";
+        this.cards = [
+            {
+                title: "Angular du stück",
+                date: new Date(2020, 1, 1)
+            },
+            {
+                title: "Ich bin alt!",
+                date: new Date(2010, 1, 1)
+            }
+        ];
     }
-    AppComponent.prototype.onInputChange = function (inputValue) {
-        this.inputValue = inputValue;
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                   <input type=\"text\" (keyup)=\"onInputChange($event.target.value)\" />\n                   <p>Im Eingabefeld steht folgender Text: {{inputValue}} </p> \n                </div>\n            "
+        template: "\n                <div *ngFor=\"let card of cards\">\n                  <my-card title=\"{{card.title}}\" [date]=\"card.date\"></my-card>\n\n\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
