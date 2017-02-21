@@ -8,23 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.cards = [
-            {
-                title: "Angular du stück",
-                date: new Date(2020, 1, 1)
-            },
-            {
-                title: "Ich bin alt!",
-                date: new Date(2010, 1, 1)
-            }
-        ];
+        this.timerDuration = 5;
     }
+    AppComponent.prototype.onTimerFinish = function () {
+        alert("Blablubberproll!");
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n\n                <div *ngFor=\"let card of cards\">\n                  <my-card title=\"{{card.title}}\" [date]=\"card.date\"></my-card>\n\n\n\n                </div>\n            "
+        template: "\n                <div>\n                    <my-timer [duration]=\"timerDuration\" (onFinish)=\"onTimerFinish()\" ></my-timer>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
