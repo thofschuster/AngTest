@@ -9,6 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+/*
+var e = new EventEmitter();
+
+e.subscribe(function(param: any){
+    console.log("Ereignis ist auggetreten!: " + param);
+});
+
+e.subscribe(function(param: any){
+    console.log("Ereignis ist nochmal auggetreten!: " + param);
+});
+
+
+setTimeout(function(){
+    e.emit("6,6 Sekunden");
+},6666);
+
+setTimeout(function(){
+    e.emit("4,4 Sekunden");
+},4444);
+
+setTimeout(function(){
+    e.emit("2,2 Sekunden");
+},2222);
+*/
 var TimerComponent = (function () {
     function TimerComponent() {
         var _this = this;

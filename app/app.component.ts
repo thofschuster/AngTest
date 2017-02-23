@@ -14,6 +14,6 @@ export class AppComponent {
     timerDuration = 5;
 
     onTimerFinish(){
-        alert("Blablubberproll!");
+        
     }
 }

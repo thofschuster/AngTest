@@ -11,7 +11,6 @@ var AppComponent = (function () {
         this.timerDuration = 5;
     }
     AppComponent.prototype.onTimerFinish = function () {
-        alert("Blablubberproll!");
     };
     return AppComponent;
 }());
