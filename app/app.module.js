@@ -10,6 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var card_component_1 = require("./card.component");
 var timer_component_1 = require("./timer.component");
+var select_component_1 = require("./select.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -18,7 +19,12 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, card_component_1.CardComponent, timer_component_1.TimerComponent],
+        declarations: [
+            app_component_1.AppComponent,
+            card_component_1.CardComponent,
+            timer_component_1.TimerComponent,
+            select_component_1.SelectComponent
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

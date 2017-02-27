@@ -5,7 +5,7 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                    <my-timer [duration]="timerDuration" (onFinish)="onTimerFinish()" ></my-timer>
+                    <my-select></my-select>
                 </div>
             `
 })
@@ -13,7 +13,9 @@ export class AppComponent {
 
     timerDuration = 5;
 
-    onTimerFinish(){
-        
-    }
+    options = [
+        "Deutsch",
+        "Englisch",
+        "Japanisch"
+    ]
 }

@@ -17,7 +17,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <my-timer [duration]=\"timerDuration\" (onFinish)=\"onTimerFinish()\" ></my-timer>\n                </div>\n            "
+        template: "\n                <div>\n                    <my-select></my-select>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
