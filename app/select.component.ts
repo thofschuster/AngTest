@@ -7,14 +7,12 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
         
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" (click)="dropDownOpened = !dropDownOpened">
-                Action <span class="caret"></span>
+                {{ buttonLabel }} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" style="display: block;" *ngIf="dropDownOpened">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li *ngFor="let option of options">
+                    <a (click)="onClickOption(option)">{{ option }}</a>
+                </li>
             </ul>
         </div>
 
@@ -25,8 +23,13 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 export class SelectComponent {
 
     dropDownOpened = false;
+    buttonLabel = "-- Bitte Wählen --"
 
     @Input() options: String[];
 
+    onClickOption(clickOption: string) {
+        this.buttonLabel = clickOption;
+        this.dropDownOpened = false;
+    }
 
 }

@@ -9,15 +9,18 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.timerDuration = 5;
+        this.options = [
+            "Deutsch",
+            "Englisch",
+            "Japanisch"
+        ];
     }
-    AppComponent.prototype.onTimerFinish = function () {
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <my-select></my-select>\n                </div>\n            "
+        template: "\n                <div>\n                    <my-select [options]=\"options\"></my-select>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -5,7 +5,7 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                    <my-select></my-select>
+                    <my-select [options]="options"></my-select>
                 </div>
             `
 })
