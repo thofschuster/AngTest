@@ -13,10 +13,12 @@ var SelectComponent = (function () {
     function SelectComponent() {
         this.dropDownOpened = false;
         this.buttonLabel = "-- Bitte Wählen --";
+        this.onChange = new core_1.EventEmitter();
     }
     SelectComponent.prototype.onClickOption = function (clickOption) {
         this.buttonLabel = clickOption;
         this.dropDownOpened = false;
+        this.onChange.emit(clickOption);
     };
     return SelectComponent;
 }());
@@ -24,6 +26,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], SelectComponent.prototype, "options", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], SelectComponent.prototype, "onChange", void 0);
 SelectComponent = __decorate([
     core_1.Component({
         selector: "my-select",

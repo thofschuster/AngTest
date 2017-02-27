@@ -26,10 +26,12 @@ export class SelectComponent {
     buttonLabel = "-- Bitte Wählen --"
 
     @Input() options: String[];
+    @Output() onChange = new EventEmitter();
 
     onClickOption(clickOption: string) {
         this.buttonLabel = clickOption;
         this.dropDownOpened = false;
+        this.onChange.emit(clickOption);
     }
 
 }

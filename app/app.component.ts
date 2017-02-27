@@ -5,7 +5,7 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                    <my-select [options]="options"></my-select>
+                    <my-select [options]="options" (onChange)="onLangiuageChanged($event)"></my-select>
                 </div>
             `
 })
@@ -18,4 +18,8 @@ export class AppComponent {
         "Englisch",
         "Japanisch"
     ]
+
+    onLangiuageChanged(newLanguage: string){
+        alert("Language got changed to: " + newLanguage )
+    }
 }

@@ -15,12 +15,15 @@ var AppComponent = (function () {
             "Japanisch"
         ];
     }
+    AppComponent.prototype.onLangiuageChanged = function (newLanguage) {
+        alert("Language got changed to: " + newLanguage);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <my-select [options]=\"options\"></my-select>\n                </div>\n            "
+        template: "\n                <div>\n                    <my-select [options]=\"options\" (onChange)=\"onLangiuageChanged($event)\"></my-select>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
