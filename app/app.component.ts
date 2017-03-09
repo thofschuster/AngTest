@@ -6,7 +6,6 @@ import { Student } from './student';
     template: `
                 <div>
                     <input type="text" [(ngModel)]="blogPost.title" />
-                    <input type="text" value="{{ blogPost.title }}" (keyup)="blogPost.title = $event.target.value" />
                     <p> {{ blogPost.title }} </p>
                 </div>
             `

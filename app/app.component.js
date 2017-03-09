@@ -18,7 +18,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <input type=\"text\" value=\"{{ blogPost.title }}\" (keyup)=\"blogPost.title = $event.target.value\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n            "
+        template: "\n                <div>\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
