@@ -8,22 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.timerDuration = 5;
-        this.options = [
-            "Deutsch",
-            "Englisch",
-            "Japanisch"
-        ];
+        this.blogPost = {
+            title: "Hallo Welt",
+            content: "Hallo Welt (Content)"
+        };
     }
-    AppComponent.prototype.onLangiuageChanged = function (newLanguage) {
-        alert("Language got changed to: " + newLanguage);
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <my-select [options]=\"options\" (onChange)=\"onLangiuageChanged($event)\"></my-select>\n                </div>\n            "
+        template: "\n                <div>\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <input type=\"text\" value=\"{{ blogPost.title }}\" (keyup)=\"blogPost.title = $event.target.value\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

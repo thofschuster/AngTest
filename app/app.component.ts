@@ -5,21 +5,17 @@ import { Student } from './student';
     selector: 'my-app',
     template: `
                 <div>
-                    <my-select [options]="options" (onChange)="onLangiuageChanged($event)"></my-select>
+                    <input type="text" [(ngModel)]="blogPost.title" />
+                    <input type="text" value="{{ blogPost.title }}" (keyup)="blogPost.title = $event.target.value" />
+                    <p> {{ blogPost.title }} </p>
                 </div>
             `
 })
 export class AppComponent {
 
-    timerDuration = 5;
-
-    options = [
-        "Deutsch",
-        "Englisch",
-        "Japanisch"
-    ]
-
-    onLangiuageChanged(newLanguage: string){
-        alert("Language got changed to: " + newLanguage )
-    }
+    blogPost = {
+        title: "Hallo Welt",
+        content: "Hallo Welt (Content)"
+    };
+  
 }
