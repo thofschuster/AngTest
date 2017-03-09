@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { CardComponent }  from './card.component';
-import { TimerComponent } from './timer.component';
-import { SelectComponent } from './select.component';
+import { TodoAddComponent } from './todo-add.component';
 
 @NgModule({
   imports: [ 
@@ -14,9 +12,7 @@ import { SelectComponent } from './select.component';
      ],
   declarations: [
      AppComponent,
-     CardComponent, 
-     TimerComponent, 
-     SelectComponent 
+     TodoAddComponent
      ],
   bootstrap: [ AppComponent ]
 })

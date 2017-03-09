@@ -6,25 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var todo_1 = require("./todo");
 var AppComponent = (function () {
     function AppComponent() {
-        this.selectedLanguage = "Deutsch";
-        this.options = [
-            "Deutsch",
-            "Englisch",
-            "Japanisch"
+        this.todos = [
+            new todo_1.Todo("Angular 2 lernen", "hoch"),
+            new todo_1.Todo("Pizza essen", "gering")
         ];
-        this.blogPost = {
-            title: "Hallo Welt",
-            content: "Hallo Welt (Content)"
-        };
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div class=\"container\">\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n                <div class=\"container\">\n                    <my-select [options]=\"options\" [(model)]=\"selectedLanguage\" ></my-select>\n                    <p>{{ selectedLanguage }}</p>\n                </div>\n            "
+        template: "\n                <div class=\"container\">\n                    <ul class=\"list-group\">\n                        <li *ngFor=\"let todo of todos\" class=\"list-group-item\">\n                            {{ todo.title }} ({{ todo.urgency }})\n                        </li>\n                    </ul>\n                    <my-todo-add (onTodoAdd)=\"todos.push($event)\"></my-todo-add>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

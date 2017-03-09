@@ -9,9 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
-var card_component_1 = require("./card.component");
-var timer_component_1 = require("./timer.component");
-var select_component_1 = require("./select.component");
+var todo_add_component_1 = require("./todo-add.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,9 +23,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            card_component_1.CardComponent,
-            timer_component_1.TimerComponent,
-            select_component_1.SelectComponent
+            todo_add_component_1.TodoAddComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
