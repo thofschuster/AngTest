@@ -8,6 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.selectedLanguage = "Deutsch";
+        this.options = [
+            "Deutsch",
+            "Englisch",
+            "Japanisch"
+        ];
         this.blogPost = {
             title: "Hallo Welt",
             content: "Hallo Welt (Content)"
@@ -18,7 +24,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div>\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n            "
+        template: "\n                <div class=\"container\">\n                    <input type=\"text\" [(ngModel)]=\"blogPost.title\" />\n                    <p> {{ blogPost.title }} </p>\n                </div>\n                <div class=\"container\">\n                    <my-select [options]=\"options\" [(model)]=\"selectedLanguage\" ></my-select>\n                    <p>{{ selectedLanguage }}</p>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -7,7 +7,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
         
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" (click)="dropDownOpened = !dropDownOpened">
-                {{ buttonLabel }} <span class="caret"></span>
+                {{ model }} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" style="display: block;" *ngIf="dropDownOpened">
                 <li *ngFor="let option of options">
@@ -26,12 +26,13 @@ export class SelectComponent {
     buttonLabel = "-- Bitte Wählen --"
 
     @Input() options: String[];
-    @Output() onChange = new EventEmitter();
+    @Input() model: String;
+    @Output() modelChange = new EventEmitter();
 
     onClickOption(clickOption: string) {
-        this.buttonLabel = clickOption;
+        this.model = clickOption;
         this.dropDownOpened = false;
-        this.onChange.emit(clickOption);
+        this.modelChange.emit(clickOption);
     }
 
 }

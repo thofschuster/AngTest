@@ -13,12 +13,12 @@ var SelectComponent = (function () {
     function SelectComponent() {
         this.dropDownOpened = false;
         this.buttonLabel = "-- Bitte Wählen --";
-        this.onChange = new core_1.EventEmitter();
+        this.modelChange = new core_1.EventEmitter();
     }
     SelectComponent.prototype.onClickOption = function (clickOption) {
-        this.buttonLabel = clickOption;
+        this.model = clickOption;
         this.dropDownOpened = false;
-        this.onChange.emit(clickOption);
+        this.modelChange.emit(clickOption);
     };
     return SelectComponent;
 }());
@@ -27,13 +27,17 @@ __decorate([
     __metadata("design:type", Array)
 ], SelectComponent.prototype, "options", void 0);
 __decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SelectComponent.prototype, "model", void 0);
+__decorate([
     core_1.Output(),
     __metadata("design:type", Object)
-], SelectComponent.prototype, "onChange", void 0);
+], SelectComponent.prototype, "modelChange", void 0);
 SelectComponent = __decorate([
     core_1.Component({
         selector: "my-select",
-        template: "\n        \n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-default dropdown-toggle\" (click)=\"dropDownOpened = !dropDownOpened\">\n                {{ buttonLabel }} <span class=\"caret\"></span>\n            </button>\n            <ul class=\"dropdown-menu\" style=\"display: block;\" *ngIf=\"dropDownOpened\">\n                <li *ngFor=\"let option of options\">\n                    <a (click)=\"onClickOption(option)\">{{ option }}</a>\n                </li>\n            </ul>\n        </div>\n\n\n    "
+        template: "\n        \n        <div class=\"btn-group\">\n            <button type=\"button\" class=\"btn btn-default dropdown-toggle\" (click)=\"dropDownOpened = !dropDownOpened\">\n                {{ model }} <span class=\"caret\"></span>\n            </button>\n            <ul class=\"dropdown-menu\" style=\"display: block;\" *ngIf=\"dropDownOpened\">\n                <li *ngFor=\"let option of options\">\n                    <a (click)=\"onClickOption(option)\">{{ option }}</a>\n                </li>\n            </ul>\n        </div>\n\n\n    "
     })
 ], SelectComponent);
 exports.SelectComponent = SelectComponent;
