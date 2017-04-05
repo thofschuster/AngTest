@@ -4,11 +4,17 @@ import { Todo } from './todo';
     selector: 'my-app',
     template: `
                 <div class="container">
-                    <ul class="list-group">
-                        <li *ngFor="let todo of todos" class="list-group-item">
-                            {{ todo.title }} ({{ todo.urgency }})
-                        </li>
-                    </ul>
+                    <br/>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Todo Liste</h3>
+                        </div>
+                        <ul class="list-group">
+                            <li *ngFor="let todo of todos" class="list-group-item">
+                                {{ todo.title }} ({{ todo.urgency }})
+                            </li>
+                        </ul>
+                    </div>
                     <my-todo-add (onTodoAdd)="todos.push($event)"></my-todo-add>
                 </div>
             `

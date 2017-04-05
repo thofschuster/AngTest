@@ -23,7 +23,7 @@ import { Todo } from './todo';
                 </div>
             </div>
             <div class="panel-footer">
-                <button class="btn btn-default" (click)="onSubmitTodo()">Todo hinzufügen</button>
+                <button class="btn btn-primary" (click)="onSubmitTodo()">Todo hinzufügen</button>
             </div>
         </div>
 
@@ -37,6 +37,7 @@ export class TodoAddComponent {
 
     onSubmitTodo(){
         this.onTodoAdd.emit(this.todo);
+        this.todo = new Todo();
 
     }
 

@@ -17,6 +17,7 @@ var TodoAddComponent = (function () {
     }
     TodoAddComponent.prototype.onSubmitTodo = function () {
         this.onTodoAdd.emit(this.todo);
+        this.todo = new todo_1.Todo();
     };
     return TodoAddComponent;
 }());
@@ -27,7 +28,7 @@ __decorate([
 TodoAddComponent = __decorate([
     core_1.Component({
         selector: "my-todo-add",
-        template: "\n        <div class=\"panel panel-default\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Todo hinzuf\u00FCgen</h3>\n            </div>\n            <div class=\"panel-body\">\n                <div class=\"form-group\">\n                    <label>Titel:</label>\n                    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"todo.title\" />\n                </div>\n                <div class=\"form-group\">\n                    <label>Priorit\u00E4t:</label>\n                    <select class=\"form-control\"[(ngModel)]=\"todo.urgency\" >\n                        <option>gering</option>\n                        <option>normal</option>\n                        <option>hoch</option>                        \n                    </select>\n                </div>\n            </div>\n            <div class=\"panel-footer\">\n                <button class=\"btn btn-default\" (click)=\"onSubmitTodo()\">Todo hinzuf\u00FCgen</button>\n            </div>\n        </div>\n\n    "
+        template: "\n        <div class=\"panel panel-default\">\n            <div class=\"panel-heading\">\n                <h3 class=\"panel-title\">Todo hinzuf\u00FCgen</h3>\n            </div>\n            <div class=\"panel-body\">\n                <div class=\"form-group\">\n                    <label>Titel:</label>\n                    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"todo.title\" />\n                </div>\n                <div class=\"form-group\">\n                    <label>Priorit\u00E4t:</label>\n                    <select class=\"form-control\"[(ngModel)]=\"todo.urgency\" >\n                        <option>gering</option>\n                        <option>normal</option>\n                        <option>hoch</option>                        \n                    </select>\n                </div>\n            </div>\n            <div class=\"panel-footer\">\n                <button class=\"btn btn-primary\" (click)=\"onSubmitTodo()\">Todo hinzuf\u00FCgen</button>\n            </div>\n        </div>\n\n    "
     })
 ], TodoAddComponent);
 exports.TodoAddComponent = TodoAddComponent;

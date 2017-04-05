@@ -19,7 +19,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n                <div class=\"container\">\n                    <ul class=\"list-group\">\n                        <li *ngFor=\"let todo of todos\" class=\"list-group-item\">\n                            {{ todo.title }} ({{ todo.urgency }})\n                        </li>\n                    </ul>\n                    <my-todo-add (onTodoAdd)=\"todos.push($event)\"></my-todo-add>\n                </div>\n            "
+        template: "\n                <div class=\"container\">\n                    <br/>\n                    <div class=\"panel panel-default\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\">Todo Liste</h3>\n                        </div>\n                        <ul class=\"list-group\">\n                            <li *ngFor=\"let todo of todos\" class=\"list-group-item\">\n                                {{ todo.title }} ({{ todo.urgency }})\n                            </li>\n                        </ul>\n                    </div>\n                    <my-todo-add (onTodoAdd)=\"todos.push($event)\"></my-todo-add>\n                </div>\n            "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
