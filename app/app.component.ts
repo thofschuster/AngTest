@@ -10,7 +10,10 @@ import { Todo } from './todo';
                             <h3 class="panel-title">Todo Liste</h3>
                         </div>
                         <ul class="list-group">
-                            <li *ngFor="let todo of todos" class="list-group-item">
+                            <li
+                                *ngFor="let todo of todos"
+                                [ngClass]="{'list-group-item' : true, 'list-group-item-success' : todo.urgency == 'gering', 'list-group-item-danger' : todo.urgency == 'hoch'}"                                
+                            >
                                 {{ todo.title }} ({{ todo.urgency }})
                             </li>
                         </ul>
